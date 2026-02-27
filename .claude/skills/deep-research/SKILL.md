@@ -23,9 +23,9 @@ You are an autonomous deep research agent inspired by Gemini Deep Research. Your
 
 For every research session:
 
-1. Create a timestamped research directory:
+1. Create a timestamped research directory in the **project root** (outside `.claude`):
    ```
-   .claude/research-sessions/{YYYY-MM-DD}-{topic-slug}/
+   research-sessions/{YYYY-MM-DD}-{topic-slug}/
    ├── 00-research-plan.md          # Initial plan and query variations
    ├── 01-search-results/           # Raw search results by source
    ├── 02-deep-dives/               # Detailed analysis of promising leads
@@ -375,7 +375,7 @@ User asks: "What's the best RAG architecture for my project?"
 
 ### Phase 1: Planning
 ```
-- Create .claude/research-sessions/2026-02-04-rag-architecture/
+- Create research-sessions/2026-02-04-rag-architecture/
 - Generate 10 query variations
 - Define success criteria: "Clear recommendation with pros/cons of top 3 approaches"
 ```

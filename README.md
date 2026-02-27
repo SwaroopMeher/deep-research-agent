@@ -34,7 +34,7 @@ An autonomous deep research orchestrator that performs comprehensive, multi-sour
 │  │  (Verify)    │                                          │
 │  └──────────────┘                                          │
 ├─────────────────────────────────────────────────────────────┤
-│          MEMORY SYSTEM (.claude/research-sessions/)         │
+│          MEMORY SYSTEM (research-sessions/)                 │
 │  00-research-plan.md → 01-search-results/ → 02-deep-dives/ │
 │  → 03-synthesis/ → 04-validation/ → FINAL-REPORT.md        │
 └─────────────────────────────────────────────────────────────┘
@@ -209,10 +209,10 @@ Research automatically stops when:
 
 ## Memory System
 
-All research is persisted to files:
+All research is persisted to files in the **project root** (outside `.claude`):
 
 ```
-.claude/research-sessions/
+research-sessions/
 └── 2025-02-04-rag-architecture/
     ├── 00-research-plan.md          # Plan, queries, research log
     ├── 01-search-results/
@@ -241,19 +241,19 @@ All research is persisted to files:
 ### Validate Research Completeness
 
 ```bash
-python ~/.claude/skills/deep-research/scripts/validate-research.py .claude/research-sessions/2025-02-04-your-topic/
+python ~/.claude/skills/deep-research/scripts/validate-research.py research-sessions/2025-02-04-your-topic/
 ```
 
 ### Merge Findings from Multiple Sources
 
 ```bash
-python ~/.claude/skills/deep-research/scripts/merge-findings.py .claude/research-sessions/2025-02-04-your-topic/
+python ~/.claude/skills/deep-research/scripts/merge-findings.py research-sessions/2025-02-04-your-topic/
 ```
 
 ### Generate Final Report
 
 ```bash
-python ~/.claude/skills/deep-research/scripts/generate-final-report.py .claude/research-sessions/2025-02-04-your-topic/
+python ~/.claude/skills/deep-research/scripts/generate-final-report.py research-sessions/2025-02-04-your-topic/
 ```
 
 ## Components
