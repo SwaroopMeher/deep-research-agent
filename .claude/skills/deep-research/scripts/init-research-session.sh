@@ -17,8 +17,8 @@ SLUG=$(echo "$TOPIC" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 
 # Get today's date
 DATE=$(date +%Y-%m-%d)
 
-# Session directory
-SESSION_DIR=".claude/research-sessions/${DATE}-${SLUG}"
+# Session directory (in project root, outside .claude)
+SESSION_DIR="research-sessions/${DATE}-${SLUG}"
 
 # Check if already exists
 if [ -d "$SESSION_DIR" ]; then
